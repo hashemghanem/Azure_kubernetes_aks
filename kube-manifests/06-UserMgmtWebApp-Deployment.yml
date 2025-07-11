@@ -43,12 +43,3 @@ spec:
               port: 8080
             initialDelaySeconds: 30
             periodSeconds: 30
-              port: 80
-            initialDelaySeconds: 30
-            periodSeconds: 10
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 80
-            initialDelaySeconds: 60
-            periodSeconds: 30
