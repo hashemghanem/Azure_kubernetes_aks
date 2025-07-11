@@ -23,4 +23,4 @@ spec:
           image: adminer:4.8.1
           imagePullPolicy: Always
           ports: 
-            - containerPort: 9090
+            - containerPort: 8080
