@@ -23,7 +23,7 @@ spec:
             - name: MYSQL_ROOT_HOST
               value: "%"
           ports:
-            - containerPort: 3306
+            - containerPort: 3307
               name: mysql    
           volumeMounts:
             - name: mysql-persistent-storage
@@ -32,6 +32,7 @@ spec:
               mountPath: /docker-entrypoint-initdb.d
           args:
             - --default-authentication-plugin=mysql_native_password
+            - --port=3307
       volumes: 
         - name: mysql-persistent-storage
           persistentVolumeClaim:

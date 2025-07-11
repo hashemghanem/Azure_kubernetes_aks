@@ -20,4 +20,5 @@ data:
     
     INSERT IGNORE INTO users (username, email, password, first_name, last_name) VALUES
     ('admin', 'admin@example.com', 'admin123', 'Admin', 'User'),
+    ('hashem', 'hashem@example.com', 'admin123', 'Hashem', 'ghanem'),
     ('testuser', 'test@example.com', 'test123', 'Test', 'User');
