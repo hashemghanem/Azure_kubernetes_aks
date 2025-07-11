@@ -4,5 +4,20 @@ metadata:
   name: usermanagement-dbcreation-script
 data: 
   mysql_usermgmt.sql: |-
-    DROP DATABASE IF EXISTS webappdb;
-    CREATE DATABASE webappdb; 
+    CREATE DATABASE IF NOT EXISTS webappdb;
+    USE webappdb;
+    
+    CREATE TABLE IF NOT EXISTS users (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      username VARCHAR(50) NOT NULL UNIQUE,
+      email VARCHAR(100) NOT NULL UNIQUE,
+      password VARCHAR(255) NOT NULL,
+      first_name VARCHAR(50),
+      last_name VARCHAR(50),
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+      updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    );
+    
+    INSERT IGNORE INTO users (username, email, password, first_name, last_name) VALUES
+    ('admin', 'admin@example.com', 'admin123', 'Admin', 'User'),
+    ('testuser', 'test@example.com', 'test123', 'Test', 'User');
