@@ -20,8 +20,6 @@ spec:
           env:
             - name: MYSQL_ROOT_PASSWORD
               value: dbpassword11
-            - name: MYSQL_DATABASE
-              value: webappdb
             - name: MYSQL_ROOT_HOST
               value: "%"
           ports:
@@ -29,7 +27,7 @@ spec:
               name: mysql    
           volumeMounts:
             - name: mysql-persistent-storage
-              mountPath: /var/lib/mysql    
+              mountPath: /var/lib/mysql
             - name: usermanagement-dbcreation-script
               mountPath: /docker-entrypoint-initdb.d
           args:
