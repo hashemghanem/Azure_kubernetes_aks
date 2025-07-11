@@ -8,7 +8,7 @@ spec:
   storageClassName: managed-premium-retain-sc 
   resources:
     requests:
-      storage: 5Gi      
+      storage: 5Gi
 
 # AKS already provisioned Storage classes managed-premium and default as part of 
 # default cluster setup      
